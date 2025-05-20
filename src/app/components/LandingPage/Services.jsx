@@ -6,7 +6,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image1 from '../../../../public/images/service1.png'
-import { StepBack, StepForward } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const services = [
     {
@@ -57,7 +57,7 @@ export const Services = () => {
           strategies that deliver real results. Let’s bring your vision to life.
         </span>
         </div>
-        <div className="py-12 pl-20">
+        <div className="py-12 ">
       <Swiper
         modules={[Navigation]}
         navigation={{
@@ -71,11 +71,11 @@ export const Services = () => {
             swiper.navigation.update();
           }}
         spaceBetween={0}
-        slidesPerView={1.1}
+        slidesPerView={1.5}
         breakpoints={{
           640: { slidesPerView: 1.5 },
           768: { slidesPerView: 2 },
-          1024: { slidesPerView: 2.5 },
+          1024: { slidesPerView: 3 },
         }}
       >
         {services.map((service, index) => (
@@ -87,16 +87,17 @@ export const Services = () => {
       <div className="flex justify-center mt-8 gap-4">
           <button
             ref={prevRef}
-            className="bg-black text-white p-3 rounded-full hover:bg-gray-800"
+            className=""
           >
-            <StepBack />
+            <ChevronLeft />
+           
         
           </button>
           <button
             ref={nextRef}
-            className="bg-black text-white p-3 rounded-full hover:bg-gray-800"
+            className=""
           >
-             <StepForward />    
+             <ChevronRight /> 
           </button>
         </div>
         </div>
