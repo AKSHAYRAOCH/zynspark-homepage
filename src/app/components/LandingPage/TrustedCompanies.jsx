@@ -7,7 +7,7 @@ export const TrustedCompanies = () => {
   return (
     <section className='text-center'>
         <h1 className='text-[56px] leading-16 '>
-        TrustedCompanies
+        Trusted Companies
             </h1>
             <div className='flex justify-center pt-12 gap-8'>
             <Image src={Logo1} alt='logo' className='' />

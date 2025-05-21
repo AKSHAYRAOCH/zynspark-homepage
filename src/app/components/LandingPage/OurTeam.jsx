@@ -84,7 +84,7 @@ export default function OurTeam() {
         >
           {teamMembers.map((member, index) => (
             <SwiperSlide key={index}>
-              <div className="border p-10 rounded-lg shadow-sm hover:shadow-lg transition bg-[#F4F4F4]">
+              <div className="border  border-none p-10 rounded-2xl shadow-sm hover:shadow-lg transition bg-[#F4F4F4]">
                 <img
                   src={member.image}
                   alt={member.name}

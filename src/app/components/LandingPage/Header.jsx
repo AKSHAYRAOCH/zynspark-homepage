@@ -12,13 +12,13 @@ export const Header = () => {
       <nav className="w-full md:w-auto">
         <ul className="flex flex-wrap justify-center md:justify-start space-x-6 text-sm">
           <li>
-            <a href="#home" className="hover:text-[#A270FF] transition">Home</a>
+            <a href="/" className="hover:text-[#A270FF] transition">Home</a>
           </li>
           <li>
-            <a href="#service" className="hover:text-[#A270FF] transition">Service</a>
+            <a href="/service" className="hover:text-[#A270FF] transition">Service</a>
           </li>
           <li>
-            <a href="#about" className="hover:text-[#A270FF] transition">Contact Us</a>
+            <a href="/contact" className="hover:text-[#A270FF] transition">Contact Us</a>
           </li>
         </ul>
       </nav>
@@ -29,7 +29,7 @@ export const Header = () => {
 
       {/* Contact Button */}
       <nav className="w-full md:w-auto flex justify-center md:justify-end">
-        <a href="#home" className="px-4 py-2 bg-black text-white rounded-xl text-sm">
+        <a href="/contact" className="px-4 py-2 bg-black text-white rounded-xl text-sm">
           Contact Us
         </a>
       </nav>
