@@ -1,6 +1,8 @@
 "use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 
 const projectData = [
   {
@@ -23,6 +25,18 @@ const projectData = [
 
 export default function OurProjects() {
   const [selectedProject, setSelectedProject] = useState(projectData[0]);
+  const { ref, inView } = useInView({
+    threshold: 1.0,
+  });
+
+  const [countKey, setCountKey] = useState(0);
+
+  // Update key to reset CountUp every time it enters view
+  useEffect(() => {
+    if (inView) {
+      setCountKey(prev => prev + 1);
+    }
+  }, [inView]);
 
   return (
     <section className="bg-[#f5f5f5] py-12 md:py-20 px-4 sm:px-6 lg:px-16 text-center">
@@ -113,32 +127,43 @@ export default function OurProjects() {
   </div>
 </div>
 
-        
-        {/* Achievements Section */}
-        <div className="bg-white rounded-xl md:rounded-2xl shadow-md mt-6 md:mt-6 py-6 px-4 md:py-10 md:px-6 mx-auto">
-          <span className="text-xs md:text-sm text-black bg-[#722CFF14] px-3 py-1 md:px-8 md:py-4  font-medium pb-7">
-            Our Achievements 🥳
-          </span>
-          <div className="flex flex-col sm:flex-row justify-around items-center mt-4 md:mt-14 gap-4 sm:gap-6 md:gap-10">
-            <div className="text-center">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">10+</h3>
-              <p className="text-sm md:text-base text-[#00000099] mt-1">Repeated clients</p>
-            </div>
-            <div className="flex gap-6 ">
-              <div className=" md:w-16 md:h-16 mx-auto bg-gradient-to-tr from-purple-400 to-pink-300 rounded-full flex items-center justify-center text-white text-base md:text-lg font-semibold">
-              </div>
-              <div className="flex flex-col items-start">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">20+</h3>
-              <p className="text-sm md:text-base text-[#00000099] mt-1"> No of Projects</p>
-              </div>
-          
-            </div>
-            <div className="text-center">
-              <h3 className="text-2xl md:text-3xl font-bold text-gray-900">5+</h3>
-              <p className="text-sm md:text-base text-[#00000099] mt-1">Partnership</p>
-            </div>
+<div
+      ref={ref}
+      className="bg-white rounded-xl md:rounded-2xl shadow-md mt-6 md:mt-6 py-6 px-4 md:py-10 md:px-6 mx-auto"
+    >
+      <span className="text-xs md:text-sm text-black bg-[#722CFF14] px-3 py-1 md:px-8 md:py-4 font-medium pb-7">
+        Our Achievements 🥳
+      </span>
+
+      <div className="flex flex-col sm:flex-row justify-around items-center mt-4 md:mt-14 gap-4 sm:gap-6 md:gap-10">
+        <div className="text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            <CountUp key={`${countKey}-clients`} end={10} duration={6} />+
+          </h3>
+          <p className="text-sm md:text-base text-[#00000099] mt-1">Repeated clients</p>
+        </div>
+
+        <div className="flex gap-6">
+          <div className="md:w-16 md:h-16 mx-auto bg-gradient-to-tr from-purple-400 to-pink-300 rounded-full 
+          flex items-center justify-center
+           text-white text-base md:text-lg font-semibold" />
+
+          <div className="flex flex-col items-start">
+            <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+              <CountUp key={`${countKey}-projects`} end={20} duration={2} />+
+            </h3>
+            <p className="text-sm md:text-base text-[#00000099] mt-1">No of Projects</p>
           </div>
         </div>
+
+        <div className="text-center">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
+            <CountUp key={`${countKey}-partners`} end={5} duration={8} />+
+          </h3>
+          <p className="text-sm md:text-base text-[#00000099] mt-1">Partnership</p>
+        </div>
+      </div>
+    </div>
       </div>
     </section>
   );
