@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import AboutImage from '../../../../public/images/AboutUs.png';
-import AboutLine from '../../../../public/images/About.svg';
+import AboutImage from '../../../../public/images/landingImages/AboutUs.png';
+import AboutLine from '../../../../public/images/landingImages/About.svg';
 
 export default function AboutUs() {
   return (

@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-import ContactImage from "../../../../public/images/ContactUs.png";
+import ContactImage from "../../../../public/images/landingImages/HeroSection/ContactUs.png";
 import Link from "next/link";
 
 export const LetsConnect = () => {

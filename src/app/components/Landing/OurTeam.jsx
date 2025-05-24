@@ -13,31 +13,31 @@ const teamMembers = [
   {
     name: "Abhiram",
     role: "UI/UX designer @Zynspark",
-    image: "/images/Abhiram.svg",
+    image: "/images/landingImages/team/Abhiram.svg",
     socials: { twitter: "#", instagram: "#", linkedin: "#" },
   },
   {
     name: "Shanmukh",
     role: "AI Researcher @Zynspark",
-    image: "/images/Shanmukh.svg",
+    image: "/images/landingImages/team/Shanmukh.svg",
     socials: { twitter: "#", instagram: "#", linkedin: "#" },
   },
   {
     name: "Akshay",
     role: "Developer @Zynspark",
-    image: "/images/Akshay.svg",
+    image: "/images/landingImages/team/Akshay.svg",
     socials: { twitter: "#", instagram: "#", linkedin: "#" },
   },
   {
     name: "Akshay",
     role: "Developer @Zynspark",
-    image: "/images/Akshay.svg",
+    image: "/images/landingImages/team/Akshay.svg",
     socials: { twitter: "#", instagram: "#", linkedin: "#" },
   },
   {
     name: "Akshay",
     role: "Developer @Zynspark",
-    image: "/images/Akshay.svg",
+    image: "/images/landingImages/team/Akshay.svg",
     socials: { twitter: "#", instagram: "#", linkedin: "#" },
   },
 ];

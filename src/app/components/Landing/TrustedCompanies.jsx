@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
-import Logo1 from '../../../../public/images/Blumi LOGO.svg'
-import Logo2 from '../../../../public/images/VR LOGO.svg'
+import Logo1 from '../../../../public/images/landingImages/brands/Blumi LOGO.svg'
+import Logo2 from '../../../../public/images/landingImages/brands/VR LOGO.svg'
 
 export const TrustedCompanies = () => {
   return (

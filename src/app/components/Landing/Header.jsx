@@ -24,7 +24,9 @@ export const Header = () => {
       </nav>
 
       <div className="w-full md:w-auto flex justify-center md:justify-start gap-4 px-4 py-2 bg-[#A270FF1A] rounded-xl text-sm">
-        <span>Pitch Deck</span>
+      <a href="/pitchdesk" >
+          Pitch Desk
+        </a>
       </div>
 
       {/* Contact Button */}

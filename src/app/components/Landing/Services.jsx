@@ -12,31 +12,35 @@ const services = [
     title: "Branding",
     description:
       "We create bold, memorable brand identities that cut through the noise. From strategy to visuals, we turn your vision into a cohesive brand experience.",
-    image: "/images/service1.png",
+      image: "/images/landingImages/services/service1.png",
+
   },
   {
     title: "Social Media Marketing",
     description:
       "We build and execute social strategies that grow your brand and spark engagement. From content planning to analytics, we handle it all—platform to post.",
-    image: "/images/service1.png",
+      image: "/images/landingImages/services/service1.png",
+ 
+    },
+  {
+    title: "Pitch Deck",
+    description:
+      "We design compelling pitch decks that tell your story with clarity and impact. From visuals to messaging, we help you win over investors and clients.",
+    image: "/images/landingImages/services/service1.png",
   },
   {
     title: "Pitch Deck",
     description:
       "We design compelling pitch decks that tell your story with clarity and impact. From visuals to messaging, we help you win over investors and clients.",
-    image: "/images/service1.png",
+      image: "/images/landingImages/services/service1.png",
+
   },
   {
     title: "Pitch Deck",
     description:
       "We design compelling pitch decks that tell your story with clarity and impact. From visuals to messaging, we help you win over investors and clients.",
-    image: "/images/service1.png",
-  },
-  {
-    title: "Pitch Deck",
-    description:
-      "We design compelling pitch decks that tell your story with clarity and impact. From visuals to messaging, we help you win over investors and clients.",
-    image: "/images/service1.png",
+      image: "/images/landingImages/services/service1.png",
+
   },
 ];
 

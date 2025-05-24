@@ -4,10 +4,10 @@ import { Header } from "./Header";
 import Animations from "../Animations/Animations";
 
 import Image from "next/image";
-import Image1 from "../../../../public/images/Group 80.png";
-import Image2 from "../../../../public/images/Group 81.png";
-import Image3 from "../../../../public/images/Group 82.png";
-import Image4 from "../../../../public/images/Group 83.png";
+import Image1 from "../../../../public/images/landingImages/HeroSection/Group 80.png";
+import Image2 from "../../../../public/images/landingImages/HeroSection/Group 81.png";
+import Image3 from "../../../../public/images/landingImages/HeroSection/Group 82.png";
+import Image4 from "../../../../public/images/landingImages/HeroSection/Group 83.png";
 import Link from "next/link";
 
 const HeroSection = () => {

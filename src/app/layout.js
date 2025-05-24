@@ -1,6 +1,6 @@
 
-import { Footer } from "./components/LandingPage/Footer";
-import { Header } from "./components/LandingPage/Header";
+import { Footer } from "./components/Landing/Footer";
+import { Header } from "./components/Landing/Header";
 import "./globals.css";
 
 export const metadata = {
