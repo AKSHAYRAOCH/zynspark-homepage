@@ -3,6 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import CountUp from 'react-countup';
 import { useInView } from 'react-intersection-observer';
+import Arrow from '../../../../public/images/arrow.svg'
 
 const projectData = [
   {
@@ -57,6 +58,7 @@ export default function OurProjects() {
       <div className="bg-white relative rounded-xl md:rounded-2xl shadow-md p-4 sm:p-6 md:p-10 flex flex-col lg:flex-row justify-between items-center gap-6 md:gap-10 mx-auto">
   {/* Left Card */}
   <div className="border-2 border-[#1B1A1C14] py-6 px-4 sm:py-8 sm:px-8 md:py-10 md:px-16 rounded-xl md:rounded-2xl w-full lg:w-1/2 relative z-10 bg-white">
+ 
     <div className="flex-1">
       {/* Avatar Icons */}
       <div className="flex gap-2 sm:gap-4 justify-center mb-4 md:mb-6">
@@ -80,6 +82,7 @@ export default function OurProjects() {
             <span className="text-xs sm:text-sm font-normal">{project.name}</span>
           </div>
         ))}
+        
       </div>
 
       <div className="mb-3 md:mb-4 text-center">
@@ -115,7 +118,7 @@ export default function OurProjects() {
       </p>
     </div>
   </div>
-
+  <Image src={Arrow} width={100} height={100} alt="Arrow"  className="relative right-0"/>
   {/* Project Image */}
   <div className="relative w-full lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-[500px]">
     <Image
@@ -155,7 +158,8 @@ export default function OurProjects() {
             <p className="text-sm md:text-base text-[#00000099] mt-1">No of Projects</p>
           </div>
         </div>
-
+ 
+ 
         <div className="text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900">
             <CountUp key={`${countKey}-partners`} end={5} duration={8} />+

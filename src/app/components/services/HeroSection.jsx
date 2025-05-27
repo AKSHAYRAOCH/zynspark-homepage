@@ -2,33 +2,37 @@
 import Image from 'next/image';
 
 const floatingImages = [
-  { src: '/avatar1.png', style: 'top-10 left-10' },
-  { src: '/avatar2.png', style: 'top-5 right-[30%]' },
-  { src: '/avatar3.png', style: 'top-20 right-10' },
-  { src: '/avatar4.png', style: 'bottom-10 left-10' },
-  { src: '/avatar5.png', style: 'bottom-20 right-20' },
-  { src: '/avatar6.png', style: 'bottom-10 right-[40%]' },
-  { src: '/avatar6.png', style: 'bottom-10 right-[40%]' },
-  { src: '/avatar6.png', style: 'bottom-10 right-[40%]' },
+  { src: 'images/serviceimages/avatar1.svg', style: 'top-40 left-10', name: 'Ads Management' },
+  { src: 'images/serviceimages/avatar2.svg', style: 'top-10 right-[60%]', name: 'Web Design' },
+  { src: 'images/serviceimages/avatar3.svg', style: 'top-20 right-60', name: 'Social Media Marketing' },
+  { src: 'images/serviceimages/avatar4.svg', style: 'bottom-40 left-10', name: 'Branding' },
+  { src: 'images/serviceimages/avatar5.svg', style: 'top-[380px] right-20', name: 'Pitch Desk' },
+  { src: 'images/serviceimages/avatar6.svg', style: 'bottom-60 right-[70%]', name: 'Content Writing' },
+  { src: 'images/serviceimages/avatar7.svg', style: 'bottom-25 right-[35%]', name: 'Web development' },
+  { src: 'images/serviceimages/avatar8.svg', style: 'bottom-32 right-[10%]', name: 'SEO Services' },
 ];
 
 export default function ServiceHeroSection() {
   return (
-    <div className="relative bg-black min-h-screen text-white flex flex-col justify-center items-center overflow-hidden ">
+    <div className="relative bg-black min-h-screen text-white flex flex-col justify-center items-center overflow-hidden">
       {/* Floating Images */}
       {floatingImages.map((img, idx) => (
-        <Image
-          key={idx}
-          src={img.src}
-          alt={`avatar-${idx}`}
-          width={50}
-          height={50}
-          className={`absolute ${img.style} rounded-md`}
-        />
+        <div key={idx} className={`absolute ${img.style} group`}>
+          <Image
+            src={img.src}
+            alt={`avatar-${idx}`}
+            width={50}
+            height={50}
+            className="rounded-md z-10"
+          />
+          <span className="absolute left-full top-1/2 -translate-y-1/2 ml-3 px-2 py-1 text-sm  text-[#892ED3] rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+            {img.name}
+          </span>
+        </div>
       ))}
 
       {/* Centered Content */}
-      <div className="text-center">
+      <div className="text-center z-20">
         <h1 className="text-3xl md:text-5xl font-bold max-w-4xl">
           Seamless Services for a <br />
           Stronger{' '}

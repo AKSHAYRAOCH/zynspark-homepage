@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { IoIosArrowForward } from "react-icons/io"; 
 
 export default function IndustriesSection() {
   const services = [
@@ -53,7 +54,7 @@ export default function IndustriesSection() {
           {services.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-[20px] p-20 shadow-sm hover:shadow-md transition"
+              className="bg-white rounded-[20px] p-20 shadow-sm hover:shadow-md transition overflow-hidden group relative "
             >
               <img
                 src={item.img}
@@ -61,6 +62,12 @@ export default function IndustriesSection() {
                 className="w-full h-48 object-contain mb-4"
               />
               <h3 className="font-semibold text-lg">{item.title}</h3>
+              <div className=" absolute inset-0 bg-opacity-30  bg-transparent backdrop-blur-sm flex items-center 
+              justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <span className="text-white text-2xl font-medium ">Know More
+                </span>
+                <IoIosArrowForward className='text-white text-2xl text-center' />
+              </div>
             </div>
           ))}
         </div>

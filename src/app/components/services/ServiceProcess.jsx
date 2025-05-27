@@ -65,9 +65,9 @@ export default function OurProcessSection() {
           <motion.img
             src={steps[activeStep].image}
             alt={steps[activeStep].title}
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 20 }}
             animate={{
-              opacity: 0.2,
+              opacity: 1.5,
               y: [0, -20, 0],
               transition: {
                 duration: 5,
