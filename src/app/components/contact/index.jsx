@@ -26,25 +26,25 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-10 relative">
-
-      {/* Contact Card */}
-      <div className="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col lg:flex-row w-full max-w-4xl">
-      <div className="hidden lg:block lg:w-1/2  relative min-h-[500px]">
-  <Image
-    src="/images/landingImages/Contact.png"
-    alt=""
-    fill
-    className="object-cover"
-    role="presentation"
-  />
-</div>
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center px-4 py-10">
+      <div className="bg-white rounded-3xl shadow-lg overflow-hidden flex flex-col md:flex-row w-full max-w-4xl">
+        
+        {/* Image Section */}
+        <div className="hidden md:block md:w-1/2 relative min-h-[250px] sm:min-h-[400px] lg:min-h-[500px]">
+          <Image
+            src="/images/landingImages/Contact.png"
+            alt="Contact Us"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
 
         {/* Form Section */}
-        <div className="w-full lg:w-1/2 p-8 sm:p-10">
-          <h2 className="text-3xl font-bold text-center mb-2">Contact us</h2>
-          <p className="text-center text-gray-500 mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        <div className="w-full md:w-1/2 p-6 sm:p-10">
+          <h2 className="text-2xl sm:text-3xl font-bold text-center mb-2">Contact us</h2>
+          <p className="text-center text-gray-500 mb-6 text-sm sm:text-base">
+            We'd love to hear from you. Fill out the form below.
           </p>
           <form onSubmit={handleSubmit} className="space-y-5">
             <div>
@@ -55,7 +55,7 @@ export default function ContactForm() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-purple-500 outline-none"
                 required
               />
             </div>
@@ -68,7 +68,7 @@ export default function ContactForm() {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-purple-500 outline-none"
                 required
               />
             </div>
@@ -81,7 +81,7 @@ export default function ContactForm() {
                 rows="4"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg px-4 py-2 resize-none outline-none focus:ring-2 focus:ring-purple-500"
+                className="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm resize-none focus:ring-2 focus:ring-purple-500 outline-none"
                 placeholder="Type your message..."
               ></textarea>
             </div>
@@ -96,22 +96,19 @@ export default function ContactForm() {
                 className="mt-1"
                 required
               />
-              <label htmlFor="terms">
-                I accept the <a href="#" className="underline">Terms</a>
+              <label htmlFor="terms" className="text-gray-600">
+                I accept the <a href="#" className="underline text-purple-600">Terms</a>
               </label>
             </div>
 
             <button
               type="submit"
-              className="w-full bg-black text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition"
+              className="w-full bg-black text-white py-2 rounded-lg font-medium hover:bg-gray-800 transition text-sm sm:text-base"
             >
               Submit
             </button>
           </form>
         </div>
-
-        {/* You could add an image or additional content here in lg:w-1/2 */}
-   
       </div>
     </div>
   );

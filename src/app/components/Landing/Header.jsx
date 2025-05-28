@@ -1,40 +1,127 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import Link from 'next/link';
 
 export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <header className="flex flex-wrap items-center justify-between px-6 py-4 text-black shadow-md gap-4 md:flex-nowrap">
-      {/* Logo */}
-      <h1 className="text-2xl font-bold w-full md:w-auto text-center md:text-left">
-        Zynspark
-      </h1>
+    <>
+      {/* Mobile Sidebar Overlay */}
+      <div
+        className={`fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 ${
+          isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
+        } md:hidden`}
+        onClick={() => setIsMenuOpen(false)}
+      ></div>
 
-      {/* Navigation Links */}
-      <nav className="w-full md:w-auto">
-        <ul className="flex flex-wrap justify-center md:justify-start space-x-6 text-sm">
-          <li>
-            <a href="/" className="hover:text-[#A270FF] transition">Home</a>
-          </li>
-          <li>
-            <a href="/service" className="hover:text-[#A270FF] transition">Service</a>
-          </li>
-          <li>
-            <a href="/contact" className="hover:text-[#A270FF] transition">Contact Us</a>
-          </li>
-        </ul>
-      </nav>
+      {/* Mobile Sidebar */}
+      <div
+        className={`fixed top-0 left-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ${
+          isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        } md:hidden`}
+      >
+        <div className="p-4 flex justify-end">
+          <button onClick={() => setIsMenuOpen(false)} className="text-black">
+            <FaTimes size={24} />
+          </button>
+        </div>
 
-      <div className="w-full md:w-auto flex justify-center md:justify-start gap-4 px-4 py-2 bg-[#A270FF1A] rounded-xl text-sm">
-      <a href="/pitchdesk" >
-          Pitch Desk
-        </a>
+        {/* Centered navigation items at top */}
+        <nav className="px-4">
+          <ul className="flex flex-col items-center space-y-8 mt-4">
+            <li>
+              <a
+                href="/"
+                className="text-black hover:text-[#A270FF] transition-colors duration-200 text-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </a>
+            </li>
+            <li>
+              <a
+                href="/service"
+                className="text-black hover:text-[#A270FF] transition-colors duration-200 text-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Service
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contact"
+                className="text-black hover:text-[#A270FF] transition-colors duration-200 text-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact Us
+              </a>
+            </li>
+            <li>
+              <a
+                href="/pitchdesk"
+                className="block px-4 py-2 bg-[#A270FF1A] rounded-xl text-black hover:bg-[#A270FF33] transition-colors duration-200 text-lg text-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Pitch Desk
+              </a>
+            </li>
+            <li>
+              <a
+                href="/contact"
+                className="block px-4 py-2 bg-black text-white rounded-xl hover:bg-gray-800 transition-colors duration-200 text-lg text-center"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact Us
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
 
-      {/* Contact Button */}
-      <nav className="w-full md:w-auto flex justify-center md:justify-end">
-        <a href="/contact" className="px-4 py-2 bg-black text-white rounded-xl text-sm">
-          Contact Us
-        </a>
-      </nav>
-    </header>
+      {/* Main Header */}
+      <header className="flex items-center justify-between px-4 sm:px-6 py-4 text-black shadow-md">
+        {/* Logo and Hamburger (mobile) */}
+        <div className="flex items-center">
+          <button 
+            className="mr-4 text-black md:hidden"
+            onClick={() => setIsMenuOpen(true)}
+          >
+            <FaBars size={24} />
+          </button>
+          <h1 className="text-xl sm:text-2xl font-bold">
+            <Link href="/" className="block">
+              Zynspark
+            </Link>
+          </h1>
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:block">
+          <ul className="flex space-x-6 text-sm">
+            <li>
+              <a href="/" className="hover:text-[#A270FF] transition-colors duration-200">Home</a>
+            </li>
+            <li>
+              <a href="/service" className="hover:text-[#A270FF] transition-colors duration-200">Service</a>
+            </li>
+            <li>
+              <a href="/contact" className="hover:text-[#A270FF] transition-colors duration-200">Contact Us</a>
+            </li>
+          </ul>
+        </nav>
+
+        {/* Desktop Buttons */}
+        <div className="hidden md:flex items-center space-x-4">
+          <a href="/pitchdesk" className="px-4 py-2 bg-[#A270FF1A] rounded-xl text-sm hover:bg-[#A270FF33] transition-colors duration-200">
+            Pitch Desk
+          </a>
+          <a href="/contact" className="px-4 py-2 bg-black text-white rounded-xl text-sm hover:bg-gray-800 transition-colors duration-200">
+            Contact Us
+          </a>
+        </div>
+      </header>
+    </>
   );
 };

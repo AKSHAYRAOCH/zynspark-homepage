@@ -118,7 +118,7 @@ export default function OurProjects() {
       </p>
     </div>
   </div>
-  <Image src={Arrow} width={100} height={100} alt="Arrow"  className="relative right-0"/>
+  <Image src={Arrow} width={100} height={100} alt="Arrow"   className="hidden lg:block relative right-0"/>
   {/* Project Image */}
   <div className="relative w-full lg:w-1/2 h-64 sm:h-80 md:h-96 lg:h-[500px]">
     <Image
@@ -134,7 +134,7 @@ export default function OurProjects() {
       ref={ref}
       className="bg-white rounded-xl md:rounded-2xl shadow-md mt-6 md:mt-6 py-6 px-4 md:py-10 md:px-6 mx-auto"
     >
-      <span className="text-xs md:text-sm text-black bg-[#722CFF14] px-3 py-1 md:px-8 md:py-4 font-medium pb-7">
+      <span className="text-xs md:text-sm text-black bg-[#722CFF14] px-3 py-2 md:px-8 md:py-4 font-medium ">
         Our Achievements 🥳
       </span>
 
