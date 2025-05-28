@@ -16,9 +16,22 @@ const labels = [
   "Branding",
 ];
 
+const colors = [
+  "#d8c0ff",
+  "#FF0000",
+  "#eaeaea",
+  "#ffc29f",
+  "#ffe3d3",
+  "#a7ff9f",
+  "#c3f2d1",
+  "#a7ff9f",
+  "#dbefe8",
+  "#8330c2",
+  "#010102", 
+];
+
 const MatterScene = () => {
   const sceneRef = useRef(null);
-  
 
   useEffect(() => {
     const engine = Matter.Engine.create();
@@ -38,7 +51,6 @@ const MatterScene = () => {
       },
     });
 
-    // Style the canvas to remove borders/outlines and ensure full coverage
     if (render.canvas) {
       render.canvas.style.position = "absolute";
       render.canvas.style.top = "0";
@@ -48,14 +60,13 @@ const MatterScene = () => {
       render.canvas.style.border = "none";
       render.canvas.style.outline = "none";
       render.canvas.style.background = "transparent";
-      render.canvas.style.display = "block"; // removes inline gap
+      render.canvas.style.display = "block";
     }
 
     Matter.Render.run(render);
     const runner = Matter.Runner.create();
     Matter.Runner.run(runner, engine);
 
-    // Static boundaries so boxes can't escape the screen
     const ground = Matter.Bodies.rectangle(width / 2, height + 10, width, 20, { isStatic: true });
     const leftWall = Matter.Bodies.rectangle(-10, height / 2, 20, height, { isStatic: true });
     const rightWall = Matter.Bodies.rectangle(width + 10, height / 2, 20, height, { isStatic: true });
@@ -63,19 +74,24 @@ const MatterScene = () => {
 
     Matter.World.add(world, [ground, leftWall, rightWall, topWall]);
 
-    // Create bodies with random x, y positions within the viewport with padding
-    const bodies = labels.map((label) => {
-      const x = Math.random() * (width - 160) + 96; // 80 px padding left and right
-      const y = Math.random() * (height - 100) + 52; // 50 px padding top and bottom
+    const bodies = labels.map((label, index) => {
+      const x = Math.random() * (width - 160) + 96;
+      const y = Math.random() * (height - 100) + 52;
+      const color = colors[index % colors.length];
+
       const body = Matter.Bodies.rectangle(x, y, 192, 50, {
         restitution: 0.9,
+        chamfer: { radius: 11 },
         render: {
-          fillStyle: "#EBEBEB",
-          strokeStyle: "transparent", // no border stroke
+          fillStyle: color,
+          strokeStyle: "transparent",
           lineWidth: 0,
         },
       });
+
       body.labelText = label;
+      body.labelColor = ["#8330c2", "#FF0000", "#010102"].includes(color) ? "#ffffff" : "#000000";
+
       return body;
     });
 
@@ -96,7 +112,6 @@ const MatterScene = () => {
     Matter.Events.on(render, "afterRender", () => {
       const ctx = render.context;
       ctx.font = "18px Inter";
-      ctx.fillStyle = "#000000";
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
 
@@ -105,6 +120,7 @@ const MatterScene = () => {
         ctx.save();
         ctx.translate(pos.x, pos.y);
         ctx.rotate(body.angle);
+        ctx.fillStyle = body.labelColor;
         ctx.fillText(body.labelText, 0, 0);
         ctx.restore();
       });

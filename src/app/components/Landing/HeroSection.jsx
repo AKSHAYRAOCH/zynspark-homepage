@@ -1,17 +1,17 @@
 // HeroSection.tsx
-'use client';
+"use client";
 
-import React from 'react';
-import { Header } from './Header';
-import Animations from '../Animations/Animations';
+import React from "react";
+import { Header } from "./Header";
+import Animations from "../Animations/Animations";
 
-import Image from 'next/image';
-import Image1 from '../../../../public/images/landingImages/HeroSection/Group 80.png';
-import Image2 from '../../../../public/images/landingImages/HeroSection/Group 81.png';
-import Image3 from '../../../../public/images/landingImages/HeroSection/Group 82.png';
-import Image4 from '../../../../public/images/landingImages/HeroSection/Group 83.png';
-import Link from 'next/link';
-import Arrow from '../../../../public/images/arrow.svg';
+import Image from "next/image";
+import Image1 from "../../../../public/images/landingImages/HeroSection/Group 80.png";
+import Image2 from "../../../../public/images/landingImages/HeroSection/Group 81.png";
+import Image3 from "../../../../public/images/landingImages/HeroSection/Group 82.png";
+import Image4 from "../../../../public/images/landingImages/HeroSection/Group 83.png";
+import Link from "next/link";
+import Arrow from "../../../../public/images/arrow.svg";
 
 const HeroSection = () => {
   return (
@@ -36,7 +36,7 @@ const HeroSection = () => {
             alt="arrow"
             width={60}
             height={60}
-            className="absolute left-full top-1/2 -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute left-full top-1/2 -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rotate-[40deg]"
           />
         </div>
 
@@ -53,7 +53,8 @@ const HeroSection = () => {
             alt="arrow"
             width={60}
             height={60}
-            className="absolute left-full top-1/2 -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            className="absolute right-full top-1/2 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rotate-[140deg] transform"
+            style={{ transform: "rotate(140deg) scaleX(-1)" }}
           />
         </div>
 
@@ -70,27 +71,27 @@ const HeroSection = () => {
             alt="arrow"
             width={60}
             height={60}
-            className="absolute left-full top-1/2 -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300  "
+            className="absolute left-full ml-2 opacity-0 group-hover:opacity-100  transition-opacity duration-300 rotate-120"
+            style={{ top: "50%", transform: "translateY(-50%) scaleX(-1)" }}
           />
         </div>
 
         <div className="absolute bottom-[200px] right-0 z-0 group">
-  <Image
-    src={Image1}
-    alt="decor"
-    width={188}
-    height={170}
-    className="rotate-[30deg]"
-  />
-  <Image
-    src={Arrow}
-    alt="arrow"
-    width={60}
-    height={60}
-    className="absolute -left-10 top-1/4 -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rotate-190"
-  />
-</div>
-
+          <Image
+            src={Image1}
+            alt="decor"
+            width={188}
+            height={170}
+            className="rotate-[30deg]"
+          />
+          <Image
+            src={Arrow}
+            alt="arrow"
+            width={60}
+            height={60}
+            className="absolute -left-10 top-1/4 -translate-y-1/2 ml-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rotate-190"
+          />
+        </div>
       </div>
 
       {/* 🌟 Main Hero Content */}
